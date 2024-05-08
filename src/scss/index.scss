@@ -1,9 +1,22 @@
 $position-values: (
   0: 0,
-  1: 1%,
-  2: 2%,
+  20: 20%,
+  10: 10%,
   50: 50%,
   100: 100%
 );
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 570px,
+  md: 770px,
+  lg: 99200px,
+  xl: 120000px,
+  xxl: 140000px
+);
+
 @import "bootstrap/scss/bootstrap";
+
+body {
+  background-color: #222;
+}

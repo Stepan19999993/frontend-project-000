@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const devMode = process.env.NODE_ENV !== 'production';
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'public'),
@@ -32,6 +32,16 @@ const config = {
           'postcss-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options:{
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          }
+        },
       },
     ],
   },
